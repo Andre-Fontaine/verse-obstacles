@@ -24,6 +24,10 @@ movable_prop<public> := class<abstract>():
     @editable {ToolTip := MoveDurationTip}
     MoveDuration:float = 3.0
 
+    # The animation easing applied to the movement.
+    @editable {ToolTip := MoveEaseTypeTip}
+    MoveEaseType:move_to_ease_type = move_to_ease_type.Linear
+
     # The duration in seconds to wait before movement begins.
     @editable {ToolTip := MoveStartDelayTip}
     MoveStartDelay:float = 0.0
@@ -40,11 +44,6 @@ movable_prop<public> := class<abstract>():
     # finishes moving.
     @editable {ToolTip := ShouldResetTip}
     ShouldReset:logic = false
-
-    # The type of animation easing to apply to the RootProp's movement. The easing type
-    # changes the speed of the animation based on its animation curve.
-    @editable {ToolTip := MoveEaseTypeTip}
-    MoveEaseType:move_to_ease_type = move_to_ease_type.EaseInOut
 
     # The starting transform of the RootProp.
     var StartingTransform:transform = transform{}
